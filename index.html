@@ -109,9 +109,11 @@
         }).then(
 		
 		
-	 loadingBar.style.display = "none";
           // 
           function (instance) {
+		  	 loadingBar.style.display = "none";
+
+		  
 				var canvas = instance.Module.canvas;
 				var container = canvas.parentElement;
 				function onResize() {
