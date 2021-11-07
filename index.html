@@ -107,6 +107,9 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then(
+		
+		
+	 loadingBar.style.display = "none";
           // 
           function (instance) {
 				var canvas = instance.Module.canvas;
