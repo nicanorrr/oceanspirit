@@ -3,13 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Ocean Spirit</title>
+    <!-- <title>Unity WebGL Player | Ocean Spirit</title> -->
+    
+    <title>Play Ocean Spirit the PH Marine Biodiversity Game!</title>
+    <meta property="og:image" content="socshareimage.png" />
+    
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+
+    <!-- FB SDK -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '941111433415520',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      // function FBShare(url){
+      //   FB.ui({
+      //       method: 'feed',
+      //       href: url
+      //   }, function(response) {});
+      // }
+
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <!-- FB SDK end -->
+
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" width=800 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -56,11 +83,11 @@
       // }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Ocean Spirit-webgl5.loader.js";
+      var loaderUrl = buildUrl + "/Ocean Spirit-webgl5b.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Ocean Spirit-webgl5.data.unityweb",
-        frameworkUrl: buildUrl + "/Ocean Spirit-webgl5.framework.js.unityweb",
-        codeUrl: buildUrl + "/Ocean Spirit-webgl5.wasm.unityweb",
+        dataUrl: buildUrl + "/Ocean Spirit-webgl5b.data.unityweb",
+        frameworkUrl: buildUrl + "/Ocean Spirit-webgl5b.framework.js.unityweb",
+        codeUrl: buildUrl + "/Ocean Spirit-webgl5b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Balangay Entertainment",
         productName: "Ocean Spirit",
@@ -103,7 +130,7 @@
       else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
+        canvas.style.width = "800px";
         canvas.style.height = "600px";
       }*/
 
@@ -134,14 +161,14 @@
               w = window.innerWidth;
               h = window.innerHeight;
 
-              var r = 600 / 960;
+              var r = 600 / 800;
 
               if (w * r > window.innerHeight) {
                 w = Math.min(w, Math.ceil(h / r));
               }
               h = Math.floor(w * r);
             } else {
-              w = 960;
+              w = 800;
               h = 600;
             }
 
